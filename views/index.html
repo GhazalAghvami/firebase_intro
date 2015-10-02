@@ -8,7 +8,47 @@
 	<link rel="stylesheet" type="text/css" href="/css/site.css">
 </head>
 <body>
-	<h1>The App Works!</h1>
+	<h1>TV SHOWS!</h1>
+	<div class="well container form-inline" style='text-align:center'>
+		<button type="button" class="btn btn-danger" onclick="startDelete()">Delete</button> <!--!the type ="button" makes no diffrence -->
+		<input class="form-control" placeholder="Title..." id='tvTitle'/>
+		<input class="form-control" placeholder="Years..." id='tvYears'/>
+		<input class="form-control" placeholder="Rating..." id='tvRating'/>
+		<button class= 'btn btn-primary' onclick="saveTVShow()">Submit</button>
+</div>
+<div id="buttonsGoHere" style="text-align:center;"> <!--dont need the semicolon but its good practice in case we want to add more later-->
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Edit</h4>
+      </div>
+      <div class="modal-body">
+        <label>Title</label><input class="form-control" placeholder="Title..." id='editTitle'/><br>
+				<label>Years</label><input class="form-control" placeholder="Years..." id='editYears'/><br>
+				<label>Rating</label><input class="form-control" placeholder="Rating..." id='editRating'/><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<span id="editSubmitButton"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+	<ul id='tvShows'></ul>
+	<!--bootstrap is built off of jQuery so we call it after-->
+
+	<script src="/jquery/dist/jquery.min.js"></script>
+	<script src="/bootstrap/dist/js/bootstrap.min.js"></script>
 	<script src="/javascript/app.js"></script>
 </body>
 </html>
